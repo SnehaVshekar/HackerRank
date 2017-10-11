@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        //int count=0;
+        int a[]=new int[100];
+        Scanner scan = new Scanner(System.in);
+        int n=scan.nextInt();
+        double pCount=0;
+        double nCount=0;
+        double zCount=0;
+        for(int i=0;i<n;i++)
+        {
+            a[i]=scan.nextInt();
+            if(a[i]>0)
+                pCount++; 
+            else if(a[i]==0)
+                zCount++;
+            else
+                nCount++;
+           
+        }
+            System.out.println(pCount/n);
+            System.out.println(nCount/n);
+            System.out.println(zCount/n);
+    }
+}
