@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan=new Scanner(System.in);
+        int p=scan.nextInt();
+        int q=scan.nextInt();
+        scan.close();
+        
+        boolean key=false;
+        
+        for(int i=p;i<=q;i++)
+        {
+            if(check_Kaprekar(i))
+                key=true;   
+        }
+        
+        if(!key)
+            System.out.println("INVALID RANGE");
+    }
+    private static boolean check_Kaprekar(int n)
+    {
+        String s   = String.valueOf((long)n*n);
+        String l   = s.substring(0, s.length() / 2);
+        String r   = s.substring(s.length()/2);
+        
+        int n_L = (l.isEmpty())  ? 0 : Integer.parseInt(l);
+        int n_R = (r.isEmpty()) ? 0 : Integer.parseInt(r);
+        if (n_L + n_R == n) 
+        {
+            System.out.print(n + " ");
+            return true;
+        }
+        else
+            return false;
+        
+        
+    }
+}
