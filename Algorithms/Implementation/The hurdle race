@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int max = Integer.MIN_VALUE;
+        for(int height_i=0; height_i < n; height_i++){
+            int temp = in.nextInt();
+            if(temp > max)
+                max = temp;
+        }
+        // your code goes here
+        System.out.print(Math.max(0, max - k));
+        
+    }
+}
